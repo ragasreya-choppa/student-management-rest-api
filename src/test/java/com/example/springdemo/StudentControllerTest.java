@@ -1,6 +1,6 @@
 package com.example.springdemo;
 import com.example.springdemo.service.StudentService;
-import com.example.springdemo.StudentController;
+import com.example.springdemo.controller.StudentController;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.test.web.servlet.MockMvc;

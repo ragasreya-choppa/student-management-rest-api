@@ -10,6 +10,7 @@ public class SpringdemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringdemoApplication.class, args);
 	}
+}
 
 //	@Bean
 //	public CommandLineRunner demo(ApplicationContext context){
@@ -21,14 +22,14 @@ public class SpringdemoApplication {
 //		};
 //	}
 
-//	@Bean
-//	public CommandLineRunner demo(OrderService orderService)
-//	{
-//		return args -> {
-//			orderService.placeOrder();
-//			orderService.placeOrder();
-//			orderService.placeOrder();
-//		};
-//	}
-
-}
+////	@Bean
+////	public CommandLineRunner demo(OrderService orderService)
+////	        {
+////		return args -> {
+////			orderService.placeOrder();
+////			orderService.placeOrder();
+////			orderService.placeOrder();
+////        };
+////    }
+//
+//}

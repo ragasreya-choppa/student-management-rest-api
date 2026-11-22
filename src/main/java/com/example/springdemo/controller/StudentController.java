@@ -1,7 +1,7 @@
-package com.example.springdemo;
+package com.example.springdemo.controller;
+import com.example.springdemo.Student;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.server.ResponseStatusException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import com.example.springdemo.service.StudentService;
@@ -16,12 +16,12 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @GetMapping("/student")
-    public Student getStudent()
-    {
-       Student student =  new Student(10,"Ananya","Computer Science");
-       return student;
-    }
+//    @GetMapping("/student")
+//    public Student getStudent()
+//    {
+//       Student student =  new Student(10,"Ananya","Computer Science");
+//       return student;
+//    }
     @GetMapping("/students")
     public List<Student> getAllStudents()
     {

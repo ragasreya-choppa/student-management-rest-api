@@ -13,13 +13,12 @@ public class SecurityConfig {
 
         http
                 .csrf(csrf-> csrf.ignoringRequestMatchers("/students","/students/**"))
-
                 .authorizeHttpRequests(auth->auth.requestMatchers(HttpMethod.GET,"/students","/students/*").permitAll()
-                        .anyRequest().authenticated())
+                        .requestMatchers("/auth/me").authenticated()
 
-
+                        .anyRequest().authenticated()
+                )
                 .httpBasic(Customizer.withDefaults());
-
 
         return http.build();
     }
