@@ -9,7 +9,7 @@ public class AppUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable=false,unique=true,length=50)
+    @Column(name = "username", nullable=false,unique=true,length=50)
     private String userName;
 
     @Column(name="password_hash",nullable=false)
