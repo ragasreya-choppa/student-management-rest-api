@@ -21,26 +21,6 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder,
-                                                 @Value("${app.security.user-password}") String userPassword,
-                                                 @Value("${app.security.admin-password}")String adminPassword)
-    {
-        UserDetails regularUser = User.builder()
-                .username("sreya")
-                .password(passwordEncoder.encode(userPassword))
-                .roles("USER")
-                .build();
-
-        UserDetails adminUser = User.builder()
-                .username("admin")
-                .password(passwordEncoder.encode(adminPassword))
-                .roles("ADMIN")
-                .build();
-
-        return new InMemoryUserDetailsManager(regularUser, adminUser);
-
-    }
 
 
     @Bean
