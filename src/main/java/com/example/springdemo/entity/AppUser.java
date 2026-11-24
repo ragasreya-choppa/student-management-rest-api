@@ -9,8 +9,8 @@ public class AppUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "username", nullable=false,unique=true,length=50)
-    private String userName;
+    @Column(nullable=false,unique=true,length=50)
+    private String username;
 
     @Column(name="password_hash",nullable=false)
     private String passwordHash;
@@ -25,8 +25,8 @@ public class AppUser {
 
     }
 
-    public AppUser(String userName, String passwordHash, String role){
-        this.userName = userName;
+    public AppUser(String username, String passwordHash, String role){
+        this.username = username;
         this.passwordHash = passwordHash;
         this.role = role;
         this.enabled = true;
@@ -36,8 +36,8 @@ public class AppUser {
         return id;
     }
 
-    public String getUserName(){
-        return userName;
+    public String getUsername(){
+        return username;
     }
 
     public String getRole(){
