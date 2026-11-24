@@ -36,7 +36,5 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .roles(appUser.getRole())
                 .disabled(!appUser.isEnabled())
                 .build();
-
-
     }
 }
