@@ -9,6 +9,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+import org.springframework.security.config.http.SessionCreationPolicy;
+
 @Configuration
 public class SecurityConfig {
 
@@ -24,6 +26,8 @@ public class SecurityConfig {
 
         http
                 .csrf(csrf-> csrf.ignoringRequestMatchers("/students","/students/**"))
+
+                .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
                 .authorizeHttpRequests(auth->auth.requestMatchers(HttpMethod.GET,"/students","/students/*").permitAll()
 
