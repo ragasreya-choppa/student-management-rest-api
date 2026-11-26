@@ -25,8 +25,6 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .orElseThrow(()-> new UsernameNotFoundException("User Not Found"));
 
 
-        
-
         return User.builder().username(appUser.getUsername())
                 .password(appUser.getPasswordHash())
                 .roles(appUser.getRole())
