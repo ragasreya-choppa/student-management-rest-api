@@ -27,7 +27,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf-> csrf.ignoringRequestMatchers("/students","/students/**"))
 
-                .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
+                .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
                 .authorizeHttpRequests(auth->auth.requestMatchers(HttpMethod.GET,"/students","/students/*").permitAll()
 
@@ -41,9 +41,9 @@ public class SecurityConfig {
 
                         .anyRequest().authenticated()
                 )
-                .formLogin(form->form.defaultSuccessUrl("/auth/me",true).permitAll())
 
-                .logout(logout->logout.logoutSuccessUrl("/login?logout"));
+                .httpBasic(Customizer.withDefaults());
+        
 
         return http.build();
     }
