@@ -6,6 +6,8 @@ import java.util.Base64;
 public class Base64UrlDemo {
     public static void main(String[]args){
 
+        //practice encoding
+
         String header = "{\"alg\":\"HS256\",\"typ\":\"JWT\"}";
 
         String payload = "{\"sub\":\"sreya\",\"role\":\"USER\"}";
@@ -27,6 +29,13 @@ public class Base64UrlDemo {
         System.out.println(encodedPayload);
 
 
+        // practice decoding
+        byte[] decodedBytes = Base64.getUrlDecoder().decode(encodedPayload);
+
+        String decodedPayload = new String(decodedBytes, StandardCharsets.UTF_8);
+
+        System.out.println("\nDecoded Payload: ");
+        System.out.println(decodedPayload);
 
     }
 }
